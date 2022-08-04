@@ -45,7 +45,7 @@ func LoadConfig() (Config, bool) {
 
 	_, err := os.Stat(cfg.DataPath)
 
-	return cfg, os.IsNotExist(err)
+	return cfg, !os.IsNotExist(err)
 }
 
 func CreateConfigFolder(cfg Config) {
